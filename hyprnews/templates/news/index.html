@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hello World! Hypr-News</h1>
+
+<h2 class="mb-4">Latest Articles</h2>
+<ul class="list-group">
+  {% for article in articles %}
+    <li class="list-group-item">
+      <a href="{{ url_for('news.article', id=article.id) }}">
+        {{ article.title }}
+      </a>
+      <small class="text-muted d-block">
+        {{ article.created.strftime("%Y-%m-%d %H:%M") }}
+      </small>
+    </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock content %}

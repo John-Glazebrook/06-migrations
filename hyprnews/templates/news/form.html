@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Post a New Article</h2>
+<form method="POST" action="{{ url_for('news.new_article') }}">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">URL</label>
+    <input type="text" class="form-control" id="url" name="url" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+
+{% endblock %}
+
+
