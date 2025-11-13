@@ -50,6 +50,6 @@ def new_article():
         if title and content:
             article = Article(title=title, body=content, url=url)
             article.save()
-            return redirect(url_for("article", id=article.id))
+            return redirect(url_for("news.article", id=article.id))
 
     return render_template("news/form.html")
